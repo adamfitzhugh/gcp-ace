@@ -52,3 +52,8 @@
 * Network
     * By default instances are placed in the default network
     * You can restrict IP range of the group by creating a custom mode VPC network/subnet
+
+* Unmanaged Instance Groups
+    * Contain heterogeneous instances that you can add and remove from the group
+    * Do not offer autoscaling, autohealing, rolling update support, multi-zone support, or use of instance templates
+    * Use these if you need to apply load balancing to groups or if you need to manage the instances yourself
