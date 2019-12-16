@@ -41,4 +41,14 @@
     * You can also do partial rollouts which allows for canary testing
 
 * Preemptible Instances
-    * 
+    * For workloads where cost is more important than speed, you can use preemptible VM instances
+    * These last 24 hours and are preempted gracefully
+    * Can be deleted at anytime although autohealing brings these back up when preemptible capacity becomes available again
+
+* Containers
+    * You can deploy containers to instances in MIGs
+    * When you specify container image in instance template section it will create a MIG full of the container-optimised OS which includes Docker
+
+* Network
+    * By default instances are placed in the default network
+    * You can restrict IP range of the group by creating a custom mode VPC network/subnet
