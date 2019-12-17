@@ -44,8 +44,8 @@
   * Terminated - The instance has been stopped by the uder or the instance encountered a failure
   
 * Machine Type Families
- * General Purpose Machine Type (N & E series)
- * Custom Machine Type
- * Memory-optimised Machine Type (M series)
- * Compute-optimised Machine Type (C series)
+  * General Purpose Machine Type (N & E series)
+  * Custom Machine Type
+  * Memory-optimised Machine Type (M series)
+  * Compute-optimised Machine Type (C series)
  
