@@ -60,6 +60,10 @@
     * If you don't specify a direction in your rule, Google uses ingress
     * Lower the priority, the higher the rule. Default priority 1000
     * Deny rules override allow rules IF they have the SAME priority configured
+    * You can enable/disable rules for troubleshooting/maintenance purposes
+    * You can specify a target using either: all instances in the network, target tags or target service accounts
+    * You cannot mix and match service accounts and network tags in a firewall rule
+    * If you change a service account for an instance it requires stopping/starting the instance
     * 
 
 * Traceroute
