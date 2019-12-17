@@ -49,7 +49,7 @@
 
         * Determine what operations are allowed on a resource
 
-        * <service>.<resource>.<verb>
+        * "<service>.<resource>.<verb>"
 
             * Example - pubsub.subscriptions.consume
         
