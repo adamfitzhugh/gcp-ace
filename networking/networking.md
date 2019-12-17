@@ -50,6 +50,17 @@
     * Every VPC network has 2 implied firewall rules. One allows most egress traffic, and the other denies all ingress traffic.
     * You cannot delete the implied rules but you can override them
     * Except for the default network you must create firewall rules to allow instances to talk to each other
+    * When you create a firewall rule you specify the VPC network, and a set of components that define the rules use
+    * Rules only support IPv4 traffic
+    * You cannot share firewall rules across VPC networks
+    * Rules are stateful. Google uses a connection tracking table to associate flows
+    * 4 pre-populated rules in the default network: default-allow-internal, default-allow-ssh, default-allow-rdp, default-allow-icmp.
+    * Always blocked traffic: GRE, protocols other than: TCP, UDP, ICMP and IPIP, egress traffic on TCP port 25
+    * Always allowed traffic: DHCP, DNS & NTP
+    * If you don't specify a direction in your rule, Google uses ingress
+    * Lower the priority, the higher the rule. Default priority 1000
+    * Deny rules override allow rules IF they have the SAME priority configured
+    * 
 
 * Traceroute
     * For internal reasons Google increases the TTL counter of packets from VM's to the internet. For example this will impact traceroutes as it will show incomplete results because the TTL doesn't expire on some hops
