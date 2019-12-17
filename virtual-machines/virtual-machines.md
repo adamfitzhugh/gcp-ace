@@ -16,7 +16,18 @@
   * An image family always points to the latest, non-deprecated version
   * Guest Environment - set of scripts, daemons and binaries which are automatically installed on VM instances. This makes a VM run properly on GCE
   * OS Inventory Management can be used to identify VM OS's, packages installed on an instance and generate/identify missing packages on an instance
-  * Live Migration - keeps VM's running even when a system event occurs such as a hardware/software update. GCE will migrate your running instances to another host in the same zone rather than rebooting your VM's.
+
+* Live Migration
+  * Keeps VM's running even when a system event occurs such as a hardware/software update
+  * GCE will migrate your running instances to another host in the same zone rather than rebooting your VM's
+  * Instances will remain running during:
+   * Maintenance and upgrades
+   * Network and power maintenance
+   * Failed hardware
+   * Host OS and BIOS upgrades
+   * Security related updates
+   * System configuration changes
+  * Once a live migration has happened the system deletes the source VM
 
 * Networks
   * A project can have up to 5 VPC networks and each GCE belongs to one VPC network
