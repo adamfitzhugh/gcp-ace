@@ -49,4 +49,5 @@
 * Firewall Rules
     * Every VPC network has 2 implied firewall rules. One allows most egress traffic, and the other denies all ingress traffic.
     * You cannot delete the implied rules but you can override them
+    * Except for the default network you must create firewall rules to allow instances to talk to each other
     * 
