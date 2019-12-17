@@ -19,6 +19,7 @@
 
     1.3 Installing and configuring the command line interface (CLI), specifically the Cloud SDK (e.g., setting the default project).
 
+
 2. Planning and configuring a cloud solution
     
     2.1 Planning and estimating GCP product use using the Pricing Calculator
@@ -38,6 +39,7 @@
     * Differentiating load balancing options
     * Identifying resource locations in a network for availability
     * Configuring Cloud DNS
+
 
 3. Deploying and implementing a cloud solution
 
@@ -83,6 +85,7 @@
 
     * Developing Deployment Manager templates
     * Launching a Deployment Manager template
+
 
 4. Ensuring successful operation of a cloud solution
 
@@ -141,6 +144,7 @@
     * Using cloud diagnostics to research an application issue (e.g., viewing Cloud Trace data, using Cloud Debug to view an application point-in-time)
     * Viewing Google Cloud Platform status
     * Working with management interfaces (e.g., Cloud Console, Cloud Shell, Cloud SDK)
+    
 
 5. Configuring access and security
     
