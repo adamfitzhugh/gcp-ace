@@ -71,4 +71,30 @@
 
         * You grant roles to users by creating an IAM policy. This is a collection of statements which define who has what access
 
-        * 
+        * A Cloud IAM policy is represented by a Cloud IAM policy object which contains a list of bindings:
+
+            * Role - The role you want to give to the user. For example roles/service.roleName
+
+            * Members - A list of one or more identities from user, serviceAccount, group or domain (G Suite/Cloud Identity domain)
+        
+    
+    * Cloud IAM
+
+        * Provides a set of methods you use to create and manage access control policies on resources
+
+        * Cloud IAM Methods:
+
+            * setIamPolicy():
+            * getIamPolicy():
+            * testIamPermissions():
+        
+    
+    * Policy Hierarchy
+
+        * Organisation > Folders > Projects > Resources
+
+        * You can set an IAM policy at any level in the hierarchy
+
+        * Resources inherit policies of a parent resource
+
+        * Child policies cannot restrict access given at a higher level
