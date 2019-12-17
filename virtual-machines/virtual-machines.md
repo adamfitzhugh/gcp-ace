@@ -8,6 +8,15 @@
   * You can also deploy images via Docker containers
   * When you stop an instance the instance moves to terminated state however just rebooting it leaves it in the running state
   * When resetting an instance the VM does not do a graceful shutdown of the OS, but it does retain persistent disk data
+  * GCP does not cap VM instance inbound/outbound traffic. However for purposes of capacity planning you should assume an instance can handle no more than 10Gbps of external internet traffic
+  * You can deploy either public or custom images on GCE
+  * Support for public images is subject to the lifecycle of the OS. Google publishes monthly updated images. Images can still be made available if the OS enters the extended lifecycle stage however monthly updated images aren't provided.
+  * Custom images can be used for importing your on-premises VM's to GCE
+  * Image families help management of images by grouping related images together for roll forward and roll back purposes
+  * An image family always points to the latest, non-deprecated version
+  * Guest Environment - set of scripts, daemons and binaries which are automatically installed on VM instances. This makes a VM run properly on GCE
+  * OS Inventory Management can be used to identify VM OS's, packages installed on an instance and generate/identify missing packages on an instance
+  * Live Migration - keeps VM's running even when a system event occurs such as a hardware/software update. GCE will migrate your running instances to another host in the same zone rather than rebooting your VM's.
 
 * Networks
   * A project can have up to 5 VPC networks and each GCE belongs to one VPC network
@@ -20,4 +29,10 @@
   * Stopping - The instance is being stopped
   * Repairing - The instance is being repaired. This can happen due to an internal error
   * Terminated - The instance has been stopped by the uder or the instance encountered a failure
+  
+* Machine Type Families
+ * General Purpose Machine Type (N & E series)
+ * Custom Machine Type
+ * Memory-optimised Machine Type (M series)
+ * Compute-optimised Machine Type (C series)
  
