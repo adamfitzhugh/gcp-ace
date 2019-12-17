@@ -1,4 +1,4 @@
-# IAM
+# IAM - Identity Access Management
 
 * IAM Intro
 
@@ -32,6 +32,21 @@
 
     * Cloud Identity Domain - Same as G Suite domain except a Cloud Identity domain doesn't have access to G Suite applications and features
 
+    * allAuthenticatedUsers - Represents anyone on the internet who has authenticated with a valid Google account
+
+    * allUsers - Represents anyone on the internet whether authenticated or not
 
 
+* Access Management Concepts
 
+    * Resources
+
+        * You can grant granular access to specific resources. For example you could grant a user admin rights to a particular storage bucket. 
+    
+        * You can also be less granular and assign permissions at a project level and permissions are inherited by all resources within that project
+
+    * Permissions
+
+        * Determine what operations are allowed on a resource
+
+        * 
