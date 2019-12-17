@@ -49,4 +49,26 @@
 
         * Determine what operations are allowed on a resource
 
+        * <service>.<resource>.<verb>
+
+            * Example - pubsub.subscriptions.consume
+        
+        * You identify roles that contain appropriate permissions as oppose to granting permissions directly to a user
+
+    * Roles
+
+        * Collection of permissions
+
+        * 3 types of roles:
+
+            * Primitive Roles - Owner, Editor and Viewer. Avoid if possible as these are legacy and contain a wide range of permissions
+
+            * Predefined Roles - These give finer-grained access
+
+            * Custom Roles - Roles which you create to tailor your needs in an organisation
+
+    * IAM Policy
+
+        * You grant roles to users by creating an IAM policy. This is a collection of statements which define who has what access
+
         * 
