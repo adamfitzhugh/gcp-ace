@@ -16,6 +16,8 @@
   * An image family always points to the latest, non-deprecated version
   * Guest Environment - set of scripts, daemons and binaries which are automatically installed on VM instances. This makes a VM run properly on GCE
   * OS Inventory Management can be used to identify VM OS's, packages installed on an instance and generate/identify missing packages on an instance
+  * Preemptible Instance - create and run instances at much lower price however Google can terminate these if it requires access to those resources for other tasks. An example of this could be batch processing. Without these instances it can still process tasks but at a slower rate
+  Preemptible instances are also terminated after they run for 24 hours by default
 
 * Live Migration
   * Keeps VM's running even when a system event occurs such as a hardware/software update
