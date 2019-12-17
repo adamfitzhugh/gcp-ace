@@ -64,7 +64,6 @@
     * You can specify a target using either: all instances in the network, target tags or target service accounts
     * You cannot mix and match service accounts and network tags in a firewall rule
     * If you change a service account for an instance it requires stopping/starting the instance
-    * 
 
 * Traceroute
     * For internal reasons Google increases the TTL counter of packets from VM's to the internet. For example this will impact traceroutes as it will show incomplete results because the TTL doesn't expire on some hops
