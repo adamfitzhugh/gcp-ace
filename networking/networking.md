@@ -38,4 +38,15 @@
     * Secondary IP Addresses - Must be separate blocks from primary IP address range and can only be used for alias IP addresses
     * Reserved IP's - see image!
 
-* 
+* Routing
+    * Routes in GCP are divided into two categories: system-generated and custom
+    * System generated routes include a default route and a subnet route. A subnet route is created for each IP range within a subnet. They define paths for traffic to reach VM's that use subnets
+    * Custom routes are either static routes that you create manually or dynamic routes learned by your cloud routers.
+    * Cloud routers share routes to your VPC networks and learn dynamic routes from connected networks when you connect your VPC network to another network
+    * Regional Dynamic Routing is the default. Unless modified, each cloud router only shares the routes to on-premises subnets within its region
+    * Global Dynamic Routing changes the behaviour. Routes to on-prem resources that they learn are available in ALL subnets in the VPC network, regardless of region
+
+* Firewall Rules
+    * Every VPC network has 2 implied firewall rules. One allows most egress traffic, and the other denies all ingress traffic.
+    * You cannot delete the implied rules but you can override them
+    * 
