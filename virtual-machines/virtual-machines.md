@@ -21,12 +21,12 @@
   * Keeps VM's running even when a system event occurs such as a hardware/software update
   * GCE will migrate your running instances to another host in the same zone rather than rebooting your VM's
   * Instances will remain running during:
-   * Maintenance and upgrades
-   * Network and power maintenance
-   * Failed hardware
-   * Host OS and BIOS upgrades
-   * Security related updates
-   * System configuration changes
+    * Maintenance and upgrades
+    * Network and power maintenance
+    * Failed hardware
+    * Host OS and BIOS upgrades
+    * Security related updates
+    * System configuration changes
   * Once a live migration has happened the system deletes the source VM
 
 * Networks
