@@ -1,0 +1,37 @@
+# IAM
+
+* IAM Intro
+
+    * Lets you grant specific access to Google Cloud resources and helps prevent access to other resources
+
+    * Examples of resources include everything from VM's and cloud storage to folders and projects
+
+    * Permissions aren't granted directly to the user. They're grouped into roles and roles are granted to members. 
+
+    * A policy defines what roles are given to which members and the policy is attached to a resource
+
+
+* IAM Model
+
+    * Member - Includes a Google account, service account, group, g Suite/Cloud identity domain that can access a resource
+
+    * Role - Collection of permissions which determine what operations are allowed on a specific resource
+
+    * Policy - Binds one or more members to a role. You define which members have what access to what resources
+
+
+* Accounts
+
+    * Google Account - Anyone who interacts with Google Cloud who has a valid e-mail address
+
+    * Service Account - An account which belongs to an application instead of an individual user
+
+    * Google Group - Collection of service accounts and Google accounts. Conveninent way to apply a policy to a number of users
+
+    * G Suite Domain - A virtual group of all Google accounts that have been created in an organisation's G Suite account. It represents your organisations internet domain (example.com)
+
+    * Cloud Identity Domain - Same as G Suite domain except a Cloud Identity domain doesn't have access to G Suite applications and features
+
+
+
+
