@@ -98,3 +98,5 @@
         * Resources inherit policies of a parent resource
 
         * Child policies cannot restrict access given at a higher level
+   
+## next topic: Understanding Custom Roles
