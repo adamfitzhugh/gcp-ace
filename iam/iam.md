@@ -63,9 +63,9 @@
 
             * Primitive Roles - Owner, Editor and Viewer. Avoid if possible as these are legacy and contain a wide range of permissions
 
-            * Predefined Roles - These give finer-grained access
+            * Predefined Roles - These give finer-grained access. These are automatically updated when new features or services are added to Google
 
-            * Custom Roles - Roles which you create to tailor your needs in an organisation
+            * Custom Roles - Roles which you create to tailor your needs in an organisation. These are NOT maintained by Google. You will need the iam.roles.create in order to create custom roles
 
     * IAM Policy
 
@@ -99,4 +99,30 @@
 
         * Child policies cannot restrict access given at a higher level
    
-## next topic: Understanding Custom Roles
+     * Understanding Custom Roles
+        
+        * You cannot grant custom roles from one project or organisation on a resource owned by a different project or organisation
+        
+        * Org Admin Role - only org admins can grant the Organisation Role Administrator role
+        
+        * Role Admin Role - allows you to administer custom roles for a project. This is used if you do not have an organisation
+        
+        * A permission might not be available to you for example it might be in beta or you have not enabled API for the service
+        
+        * The following permissions are NOT supported in custom roles:
+            
+            * iam.serviceAccounts.getAccessToken
+            * iam.serviceAccounts.actAs
+            * iam.serviceAccounts.signBlob
+            * iam.serviceAccounts.signJwt
+         
+        * Some permissions are dependant on others. For example to update a Cloud IAM policy you need read-write capabilities along with the setIamPolicy permission
+        
+        * ID for custom role can be up to 64 characters long and must be unique. It can contain uppercase, lowercase, alphanumeric characters, underscored and periods. The role ID cannot be changed once created
+        
+        * You can delete a role but not create a new one with the same ID until after the 37-day deletion period
+        
+        * You can test a custom role as it includes a role.stage property. Setting the stage to ALPHA indicates the role is not ready for production. You can allow a small set of members to use the role
+        
+        * You can then change the stage to BETA (if the services are still in beta) or GA
+        
