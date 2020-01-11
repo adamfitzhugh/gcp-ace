@@ -173,4 +173,83 @@
 
         * If you want to allow your application to access a storage bucket, you grant the service account permissions to read the Cloud Storage bucket.
 
-        
+        * Service Account User Role
+
+            * Granting the Service Account User role to a user for a project gives that user access to all service accounts under that project
+
+            * Granting the Service Account User role to a user for a specific service account gives a user access to only that service account
+
+        * Service Account Token Creator Role
+
+            * Enables impersonation of service accounts to create OAuth2 access tokens, sign blobs or sign JWTs
+
+        * Service Account Actor Role
+
+            * Deprecated role
+
+        * Access Scopes
+
+            * Legacy method for specifying permissions for your VM. This was before the use of IAM roles
+
+    * Short-Lived Service Account Credentials
+
+        *  You can create short-lived credentials which give you the ability to assume identity of the Google Cloud service account
+
+        * Use case for this is emergency access to Cloud resources
+
+    
+    * Application Default Credentials
+
+        * Makes it easy to use service accounts when operating inside/outside Google Cloud, as well as across multiple projects
+
+        * Most common use case is testing code on a local machine and then moving it to a project in Google Cloud
+
+
+* Understanding Policies
+
+    * An IAM policy is attached to a resource and restricts access to the resource and child resources
+
+    * Policy Structure
+
+        * A policy is a collection of bindings, audit configuration and metadata
+
+            * Bindings
+                * A member such as a user account, service account, Google group or domain
+                * A role which is a collection of permissions that grant access to perform specific actions
+                * A condition which is a logical expression that further constrains the role binding based on attributes about the request
+            
+            * Audit Config which is used to configure audit logging for the policy
+
+            * Metadata includes the following fields
+                * etag - used for currency control and ensure policies are updated and not overwritten by each other
+                * version - specifies schema for given policy
+
+        * Policy Limitations
+
+            * Every Google Cloud resource that supports an IAM policy at it's hierarchy level can have a maximum of one policy
+
+            * Each policy can contain 1,500 members
+
+            * Any policy changes take effect within 60 seconds. However it can take up to 7 minutes for policy changes to propagate across the system
+
+        * Policy Inheritance and Resource Hierarchy
+
+            * Setting a policy at a higher level in the hierarchy means everything below has the same policy applied
+
+            * Policy inheritance describes how policies apply to resources beneath their level in the hierarchy
+
+            * Effective policy describes how all parent policies are inherited for a resource
+
+        * Policy Versions
+
+            * Used to avoid overwriting existing integrations you may have configured under Cloud IAM with new updates
+
+        * Policy Best Practices
+
+            * When managing multiple user accounts with the same config use Google Groups instead
+
+            * Carefully consider which members are granted access at the org level
+
+            * Grant role bindings at project level only as required for specific groups or individual permissions
+
+            * Specify policy version!
