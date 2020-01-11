@@ -99,78 +99,78 @@
 
         * Child policies cannot restrict access given at a higher level
    
-     * Understanding Custom Roles
+* Understanding Custom Roles
+       
+    * You cannot grant custom roles from one project or organisation on a resource owned by a different project or organisation
+       
+    * Org Admin Role - only org admins can grant the Organisation Role Administrator role
+    
+    * Role Admin Role - allows you to administer custom roles for a project. This is used if you do not have an organisation
         
-        * You cannot grant custom roles from one project or organisation on a resource owned by a different project or organisation
+    * A permission might not be available to you for example it might be in beta or you have not enabled API for the service
         
-        * Org Admin Role - only org admins can grant the Organisation Role Administrator role
-        
-        * Role Admin Role - allows you to administer custom roles for a project. This is used if you do not have an organisation
-        
-        * A permission might not be available to you for example it might be in beta or you have not enabled API for the service
-        
-        * The following permissions are NOT supported in custom roles:
+    * The following permissions are NOT supported in custom roles:
             
-            * iam.serviceAccounts.getAccessToken
-            * iam.serviceAccounts.actAs
-            * iam.serviceAccounts.signBlob
-            * iam.serviceAccounts.signJwt
+        * iam.serviceAccounts.getAccessToken
+        * iam.serviceAccounts.actAs
+        * iam.serviceAccounts.signBlob
+        * iam.serviceAccounts.signJwt
          
-        * Some permissions are dependant on others. For example to update a Cloud IAM policy you need read-write capabilities along with the setIamPolicy permission
+    * Some permissions are dependant on others. For example to update a Cloud IAM policy you need read-write capabilities along with the setIamPolicy permission
         
-        * ID for custom role can be up to 64 characters long and must be unique. It can contain uppercase, lowercase, alphanumeric characters, underscored and periods. The role ID cannot be changed once created
+    * ID for custom role can be up to 64 characters long and must be unique. It can contain uppercase, lowercase, alphanumeric characters, underscored and periods. The role ID cannot be changed once created
         
-        * You can delete a role but not create a new one with the same ID until after the 37-day deletion period
+    * You can delete a role but not create a new one with the same ID until after the 37-day deletion period
         
-        * You can test a custom role as it includes a role.stage property. Setting the stage to ALPHA indicates the role is not ready for production. You can allow a small set of members to use the role
+    * You can test a custom role as it includes a role.stage property. Setting the stage to ALPHA indicates the role is not ready for production. You can allow a small set of members to use the role
         
-        * You can then change the stage to BETA (if the services are still in beta) or GA
+    * You can then change the stage to BETA (if the services are still in beta) or GA
 
     
-    * Service Accounts
+* Service Accounts
 
-        * An account used by an application or VM instance, NOT a person. Used for making authorised API calls
+    * An account used by an application or VM instance, NOT a person. Used for making authorised API calls
 
-        * Identified by e-mail address which is unique to the account
+    * Identified by e-mail address which is unique to the account
 
-        * Difference between User and Service account
+    * Difference between User and Service account
 
-            * Service accounts do not have passwords and cannot log in via browsers
+        * Service accounts do not have passwords and cannot log in via browsers
 
-            * Associated with private/public RSA key-pairs that are used for authentication to Google
+        * Associated with private/public RSA key-pairs that are used for authentication to Google
 
-            * Cloud IAM permissions can be granted to allow other users to impersonate a service account
+        * Cloud IAM permissions can be granted to allow other users to impersonate a service account
 
-            * Service accounts are NOT members of G Suite domain unlike user accounts
+        * Service accounts are NOT members of G Suite domain unlike user accounts
 
-        * Types of Service Account Keys
+    * Types of Service Account Keys
 
-            * Each SA is associated with two sets of public/private key pairs that are used to authenticate to Google - Google-managed keys and user-managed keys
+        * Each SA is associated with two sets of public/private key pairs that are used to authenticate to Google - Google-managed keys and user-managed keys
 
-            * Google-managed Keys - Google stores the public/private keys and rotate them regularly
+        * Google-managed Keys - Google stores the public/private keys and rotate them regularly
 
-            * User-managed Keys - Imply you own the public/private parts of the key pair. Google only stores the public part of a user-managed key. Using user-managed keys can represent a security risk if not managed correctly
+        * User-managed Keys - Imply you own the public/private parts of the key pair. Google only stores the public part of a user-managed key. Using user-managed keys can represent a security risk if not managed correctly
         
-        * Types of Service Accounts
+    * Types of Service Accounts
 
-            * User-managed Service Accounts
+        * User-managed Service Accounts
                 
-                * When you create a new project, if the Compute Engine API is enabled a Compute Engine SA is created for you by default using the identifier PROJECT_NUMBER-compute@developer.gserviceaccount.com
+            * When you create a new project, if the Compute Engine API is enabled a Compute Engine SA is created for you by default using the identifier PROJECT_NUMBER-compute@developer.gserviceaccount.com
 
-                * If your project contains an App Engine application the App Engine SA is created by default using the identifier PROJECT_ID@appspot.gserviceaccount.com
+            * If your project contains an App Engine application the App Engine SA is created by default using the identifier PROJECT_ID@appspot.gserviceaccount.com
 
-                * If you create a service account you'll name the SA and it will be assigned an e-mail with the following format SERVICE_ACCOUNT_NAME@PROJECT_ID.iam.gserviceaccount.com
+            * If you create a service account you'll name the SA and it will be assigned an e-mail with the following format SERVICE_ACCOUNT_NAME@PROJECT_ID.iam.gserviceaccount.com
 
-                * You can create up to 100 service accounts per project
+            * You can create up to 100 service accounts per project
             
-            * Google-managed Service Accounts
+        * Google-managed Service Accounts
 
-                * Google create and own service accounts which represent different Google services and each account is granted IAM roles to access your Google Cloud project
+            * Google create and own service accounts which represent different Google services and each account is granted IAM roles to access your Google Cloud project
 
-                * An example of a Google-managed SA is a Google API service account using the identifier PROJECT_NUMBER@cloudservices.gserviceaccount.com. This account is used to run internal Google processes and is not listed in the Service Accounts section of the console. This account is deleted when the project is deleted
+            * An example of a Google-managed SA is a Google API service account using the identifier PROJECT_NUMBER@cloudservices.gserviceaccount.com. This account is used to run internal Google processes and is not listed in the Service Accounts section of the console. This account is deleted when the project is deleted
 
-        * Service Account Permissions
+    * Service Account Permissions
 
-            * If you want to allow your application to access a storage bucket, you grant the service account permissions to read the Cloud Storage bucket.
+        * If you want to allow your application to access a storage bucket, you grant the service account permissions to read the Cloud Storage bucket.
 
         
