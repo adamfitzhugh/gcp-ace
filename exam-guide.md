@@ -5,19 +5,67 @@
     1.1 Setting up cloud projects and accounts. Activities include:
 
     * Creating projects
+        
+        * To create a project navigate to Select a Project and click New Project
+    
     * Assigning users to predefined IAM roles within a project
+
+        * From the left hand pane navigate to IAM & Admin > IAM > Add and specify your users and roles
+
     * Managing users in Cloud Identity (manually and automated)
+
+        * From the left hand pane click IAM & Admin > IAM to view users and what roles are assigned to them
+        * Clicking the roles tab shows the top level roles and what users/accounts are assigned to them
+
     * Enabling APIs within projects
+
+        * From the left hand pane navigate to API's and services > Library & select your project
+        * Search and click the API you want to enable
+        * Click Enable
+
     * Provisioning one or more Stackdriver workspaces
+
+        * From the left hand pane click Stackdriver > Monitoring and ensure a project is selected
+        * Click the drop down next to the project name and select Create Workspace
+        * Select your project and click Create Workspace
 
     1.2 Managing billing configuration. Activities include:
 
     * Creating one or more billing accounts
+
+        * From the left hand pane click Billing console
+        * Click Create account to create a new account
+        * Self serve billing accounts are paid by credit/debit cards
+        * Invoiced billing accounts are sent to customers
+
     * Linking projects to a billing account
+
+        * From Billing page go to Account Management
+        * Under 'Projects linked to this billing account' locate the project you want to move
+        * Select 'Change billing' then choose the destination billing account
+
     * Establishing billing budgets and alerts
+
+        * From the Billing page click Budgets & alerts
+        * Click Create Budget
+        * Specify the projects to associate with the alert
+        * Specify cost amounts
+
     * Setting up billing exports to estimate daily/monthly charges
 
+        * From the Billing page click Billing export
+        * You can either export to Big Query or File Export, so choose which option you'd like
+
     1.3 Installing and configuring the command line interface (CLI), specifically the Cloud SDK (e.g., setting the default project).
+
+        * Using Debian/Ubuntu - run 'apt-get'
+        * Using Red Hat/CentOS - run 'yum'
+        * Using Windows - download appropriate installer from cloud.google.com
+
+        * Once installed, you will need to initialise the SDK using 'gcloud init' command
+        * You are prompted to authenticate with Google when you go to the URL
+        * Copy the response code into your terminal window
+        * Next you are prompted to enter a project by either selecting an already existing one, or creating a new one (this will be your default project)
 
 
 2. Planning and configuring a cloud solution
